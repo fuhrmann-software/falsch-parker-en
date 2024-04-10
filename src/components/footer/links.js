@@ -23,9 +23,9 @@ export const footerLinks = [
     title: 'About us',
     links: [
       { title: 'FAQ' },
-      { title: 'Terms & Conditions', href: '/' },
-      { title: 'Imprint', href: '/' },
-      { title: 'Data protection', href: '/' },
+      { title: 'Terms & Conditions', href: '/terms-and-conditions' },
+      { title: 'Imprint', href: '/imprint' },
+      { title: 'Data protection', href: '/data-protection' },
     ],
   },
   {
