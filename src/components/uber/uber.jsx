@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import UberTowing1 from '@/images/home-page/uber-towing-1.png';
-import UberTowing2 from '@/images/home-page/uber-towing-2.png';
+import UberTowing1 from '@/images/global/uber-towing-1.png';
+import UberTowing2 from '../../../public/images/global/uber-towing-2.png';
+import UberTowing1Mobile from '@/images/global/uber-towing-1-mobile.png';
 import { CornerButtonContainer } from '@/components/buttons/cornerButtonContainer';
 import { RoundButton } from '@/components/buttons/roundButton';
 import { Cross } from '@/components/icons/cross';
@@ -16,12 +17,12 @@ export const Uber = () => {
       <div className='relative h-[700px] w-full overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card max-md:h-[580px]'>
         {isFirstScreen ? (
           <div className='relative h-full w-full'>
-            <div className='absolute z-[1] flex flex-col p-[100px] text-8xl text-white max-md:p-10 max-md:text-2xl'>
+            <div className='absolute z-[1] flex flex-col p-[100px] text-8xl text-white max-md:p-10 max-md:text-4xl'>
               <span className='text-white'>
                 Uber <br />
                 <span className='text-white/50'>for towing.</span>
               </span>
-              <span className='mt-12 text-xl max-md:text-base'>
+              <span className='text-xl max-md:text-lg max-sm:mt-5 max-sm:max-w-[150px] max-sm:text-base sm:mt-12'>
                 Our app requires only 2 minutes of processing time.
               </span>
             </div>
@@ -29,7 +30,13 @@ export const Uber = () => {
               src={UberTowing1}
               fill
               alt='No Parking'
-              className='object-cover object-bottom'
+              className='object-cover object-bottom max-sm:hidden'
+            />
+            <Image
+              src={UberTowing1Mobile}
+              fill
+              alt='No Parking'
+              className='object-cover object-bottom sm:hidden'
             />
           </div>
         ) : (
