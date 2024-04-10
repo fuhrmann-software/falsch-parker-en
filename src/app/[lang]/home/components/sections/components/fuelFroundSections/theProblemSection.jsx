@@ -51,7 +51,7 @@ export const TheProblemSection = () => {
           theme='dark'
           icon={isTwoScreen ? ArrowLeft : Cross}
           onClick={() => setIsTwoScree((prev) => !prev)}
-          animation='group-hover:scale-125'
+          animation={`group-hover:scale-125 ${!isTwoScreen && 'group-hover:-rotate-90'}`}
         />
       </CornerButtonContainer>
     </div>

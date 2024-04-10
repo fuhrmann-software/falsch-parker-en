@@ -10,7 +10,6 @@ import GasStation from '@/images/contact/gas-station.png';
 import { CornerButtonContainer } from '@/components/buttons/cornerButtonContainer';
 import { RoundButton } from '@/components/buttons/roundButton';
 import { ArrowDown } from '@/components/icons/arrowDown';
-
 import cl from 'classnames';
 
 export const ProductCard = ({
@@ -19,7 +18,7 @@ export const ProductCard = ({
   type,
   className,
   icon = ArrowDown,
-  targetElement,
+  targetElement = null,
 }) => {
   let src = null;
   let alt = '';
@@ -53,35 +52,68 @@ export const ProductCard = ({
   }
 
   return (
-    <Link
-      to={targetElement}
-      smooth={true}
-      offset={-75}
-      duration={1500}
-      className='rounded-br-0 h-[680px] w-[440px] cursor-pointer overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card max-md:h-[580px] max-md:w-[328px]'>
-      <div className='group relative h-[680px] w-[440px] transform rounded-card grayscale transition duration-500 ease-in-out hover:grayscale-0 max-md:h-[580px] max-md:w-[328px]'>
-        <div className='absolute z-[2] p-10 text-5xl text-white max-md:text-4xl'>
-          {title}
+    <div>
+      {targetElement ? (
+        <Link
+          to={targetElement}
+          smooth={true}
+          offset={-75}
+          duration={1500}
+          className=''>
+          <div className='rounded-br-0 h-[680px] w-[440px] cursor-pointer overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card max-md:h-[580px] max-md:w-[328px]'>
+            <div className='group relative h-[680px] w-[440px] transform rounded-card grayscale transition duration-500 ease-in-out hover:grayscale-0 max-md:h-[580px] max-md:w-[328px]'>
+              <div className='absolute z-[2] p-10 text-5xl text-white max-md:text-4xl'>
+                {title}
+              </div>
+              <div className='relative h-[680px] w-[440px] '>
+                <Image
+                  src={src}
+                  className='object-cover duration-500 ease-in-out group-hover:scale-105'
+                  fill
+                  alt={alt}
+                />
+              </div>
+              <div className='absolute bottom-0 z-[2] p-10 pr-14 text-lg text-white/50 transition duration-500 ease-in-out group-hover:text-white max-md:text-base'>
+                {subtitle}
+              </div>
+              <CornerButtonContainer>
+                <RoundButton
+                  icon={Icon}
+                  animation='group-hover:scale-125'
+                  className={cl(className, 'text-white')}
+                />
+              </CornerButtonContainer>
+            </div>
+          </div>
+        </Link>
+      ) : (
+        // We had to make a duplicate because the modal was cursing, there was no time to fix it
+        <div className='rounded-br-0 h-[680px] w-[440px] cursor-pointer overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card max-md:h-[580px] max-md:w-[328px]'>
+          <div className='group relative h-[680px] w-[440px] transform rounded-card grayscale transition duration-500 ease-in-out hover:grayscale-0 max-md:h-[580px] max-md:w-[328px]'>
+            <div className='absolute z-[2] p-10 text-5xl text-white max-md:text-4xl'>
+              {title}
+            </div>
+            <div className='relative h-[680px] w-[440px] '>
+              <Image
+                src={src}
+                className='object-cover duration-500 ease-in-out group-hover:scale-105'
+                fill
+                alt={alt}
+              />
+            </div>
+            <div className='absolute bottom-0 z-[2] p-10 pr-14 text-lg text-white/50 transition duration-500 ease-in-out group-hover:text-white max-md:text-base'>
+              {subtitle}
+            </div>
+            <CornerButtonContainer>
+              <RoundButton
+                icon={Icon}
+                animation='group-hover:scale-125'
+                className={cl(className, 'text-white')}
+              />
+            </CornerButtonContainer>
+          </div>
         </div>
-        <div className='relative h-[680px] w-[440px] '>
-          <Image
-            src={src}
-            className='object-cover duration-500 ease-in-out group-hover:scale-105'
-            fill
-            alt={alt}
-          />
-        </div>
-        <div className='absolute bottom-0 z-[2] p-10 pr-14 text-lg text-white/50 transition duration-500 ease-in-out group-hover:text-white max-md:text-base'>
-          {subtitle}
-        </div>
-        <CornerButtonContainer>
-          <RoundButton
-            icon={Icon}
-            animation='group-hover:scale-125'
-            className={cl(className, 'text-white')}
-          />
-        </CornerButtonContainer>
-      </div>
-    </Link>
+      )}
+    </div>
   );
 };

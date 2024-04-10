@@ -32,7 +32,7 @@ const RenderTowingPool = () => {
           onClick={() => setIsFirstScreen((prev) => !prev)}
           theme='dark'
           className='relative z-[1]'
-          animation='group-hover:scale-125 group-hover:-rotate-45'
+          animation={`group-hover:scale-125 ${isFirstScreen ? 'group-hover:-rotate-90' : 'group-hover:-rotate-45'} `}
         />
       </CornerButtonContainer>
     </div>

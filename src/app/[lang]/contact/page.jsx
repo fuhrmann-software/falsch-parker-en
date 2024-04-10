@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Container } from '@/components/container/container';
 import { ProductCard } from '@/components/cards/productCard';

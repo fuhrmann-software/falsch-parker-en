@@ -65,7 +65,7 @@ export const Uber = () => {
             onClick={() => setIsFirstScreen((prev) => !prev)}
             theme='dark'
             className='relative z-[1]'
-            animation='group-hover:scale-125'
+            animation={`group-hover:scale-125 ${isFirstScreen && 'group-hover:-rotate-90'}`}
           />
         </CornerButtonContainer>
       </div>

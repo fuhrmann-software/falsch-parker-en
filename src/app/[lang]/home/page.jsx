@@ -25,7 +25,7 @@ const Page = () => {
     <section>
       <MainSection />
       <TrustedBySection />
-      <OurProductsSection ref={ourProductsSectionRef} />
+      <OurProductsSection />
       <ParkingTicketSection />
       <HowItWorksFirstSection />
       <TowingSection />

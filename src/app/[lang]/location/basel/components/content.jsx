@@ -21,7 +21,7 @@ const Content = () => {
           <RoundButton
             icon={isConclusionText ? ArrowLeft : Cross}
             theme='dark'
-            animation='group-hover:scale-125'
+            animation={`group-hover:scale-125 ${!isConclusionText && 'group-hover:-rotate-90'}`}
             onClick={() => setIsConclusionText((prev) => !prev)}
           />
         </div>

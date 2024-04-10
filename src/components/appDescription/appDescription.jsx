@@ -106,7 +106,7 @@ export const AppDescription = () => {
                 theme='light'
                 icon={isFirstScreen ? Cross : ArrowLeft}
                 onClick={() => setIsFirstScreen((prev) => !prev)}
-                animation='group-hover:scale-125'
+                animation={`group-hover:scale-125 ${isFirstScreen && 'group-hover:-rotate-90'}`}
               />
             </CornerButtonContainer>
           </div>
