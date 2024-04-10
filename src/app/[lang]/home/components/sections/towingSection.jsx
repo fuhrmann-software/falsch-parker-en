@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import { Element } from 'react-scroll';
 import { Container } from '@/components/container/container';
 import { DivideBanner } from '@/components/divideBanner/divideBanner';
 import EyeIcon from '@/images/global/icons/divideIcons/eye.svg';
@@ -19,14 +20,14 @@ export const TowingSection = () => {
 
   return (
     <Container>
-      <div className='my-[170px] max-md:my-[100px]'>
+      <Element name='towing' className='my-[170px] max-md:my-[100px]'>
         <DivideBanner
           sectionTitles={['Towing']}
           title='Tow from business and private parkings now.'
           subtitle='We have 60 cars in our towing car pool and more than 12 towing companies are connected to our app.'
           images={[EyeIcon, PhotoIcon, Towing]}
         />
-      </div>
+      </Element>
       <div>
         <Uber />
       </div>

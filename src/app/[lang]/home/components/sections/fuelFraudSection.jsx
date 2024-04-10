@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element } from 'react-scroll';
 import { Container } from '@/components/container/container';
 import { DivideBanner } from '@/components/divideBanner/divideBanner';
 import RefillIcon from '@/images/global/icons/divideIcons/refill.svg';
@@ -11,14 +12,14 @@ import { SaveTimeAndMoney } from '@/components/saveTimeAndMoney/saveTimeAndMoney
 export const FuelFraudSection = () => {
   return (
     <Container>
-      <div className='my-[170px] max-md:my-[100px]'>
+      <Element name='fuel-fraud' className='my-[170px] max-md:my-[100px]'>
         <DivideBanner
           sectionTitles={['Fuel fraud']}
           title='Significantly reduce fuel fraud at gas stations.'
           subtitle='Wrong Parker offers an efficient solution for gas stations to manage and reduce fuel fraud.'
           images={[RefillIcon, CoinIcon, LikeIcon]}
         />
-      </div>
+      </Element>
       <TheProblemSection />
       <HowItWorksSection />
       <SaveTimeAndMoney />

@@ -23,7 +23,7 @@ const Page = () => {
 
   return (
     <section>
-      <MainSection scrollTo={scrollToOurProductsSection} />
+      <MainSection />
       <TrustedBySection />
       <OurProductsSection ref={ourProductsSectionRef} />
       <ParkingTicketSection />
