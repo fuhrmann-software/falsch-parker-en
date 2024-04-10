@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import RefillImage from '../../../../../../../../public/images/global/refill.png';
+import RefillMobileImage from '../../../../../../../../public/images/global/refill-mobile.png';
 import { CornerButtonContainer } from '@/components/buttons/cornerButtonContainer';
 import { RoundButton } from '@/components/buttons/roundButton';
 import { ArrowLeft } from '@/components/icons/arrowLeft';
@@ -11,7 +12,7 @@ export const TheProblemSection = () => {
   return (
     <div className='relative h-[700px] w-full overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card bg-black'>
       {isTwoScreen ? (
-        <div className='absolute top-0 z-[1] flex h-full w-full flex-col items-center justify-center '>
+        <div className='absolute top-0 z-[1] flex h-full w-full flex-col items-center justify-center'>
           <div className='max-w-[650px] text-2xl text-white max-md:px-5 max-md:text-xl'>
             <div className='pb-6 text-white/50 '>
               People are filling up their cars and not paying
@@ -26,11 +27,11 @@ export const TheProblemSection = () => {
         </div>
       ) : (
         <>
-          <div className='absolute top-0 z-[1] flex flex-col p-20'>
+          <div className='absolute top-0 z-[1] flex flex-col p-20 max-sm:p-10'>
             <span className='self-start rounded-full bg-white/10 px-4 py-3 text-white'>
               The problem
             </span>
-            <span className='mt-6 max-w-[800px] text-8xl text-white max-md:text-4xl'>
+            <span className='mt-6 max-w-[800px] text-8xl text-white max-lg:text-5xl max-sm:text-[42px]'>
               <span className='text-white/50'>Vehicles are refueling</span>{' '}
               without payment.
             </span>
@@ -40,7 +41,14 @@ export const TheProblemSection = () => {
             src={RefillImage}
             fill
             alt='Refill'
-            className='object-cover object-right'
+            className='object-cover object-right max-sm:hidden'
+          />
+
+          <Image
+            src={RefillMobileImage}
+            fill
+            alt='Refill'
+            className='object-cover object-right sm:hidden'
           />
         </>
       )}
