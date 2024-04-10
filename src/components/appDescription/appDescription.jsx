@@ -9,6 +9,7 @@ import { RoundButton } from '@/components/buttons/roundButton';
 import { Cross } from '@/components/icons/cross';
 import { ArrowLeft } from '@/components/icons/arrowLeft';
 import { ArrowRight } from '@/components/icons/arrowRight';
+import { useRouter } from 'next/navigation';
 
 const RenderImageBlock = () => {
   return (
@@ -49,6 +50,7 @@ const RenderTextBlock = (isOnlyApp) => {
 };
 
 export const AppDescription = () => {
+  const router = useRouter();
   const [isOnlyApp, setIsOnlyApp] = useState(true);
   const [isFirstScreen, setIsFirstScreen] = useState(true);
 
@@ -58,6 +60,10 @@ export const AppDescription = () => {
 
   const openQrCode = () => {
     !isOnlyApp && setIsOnlyApp(true);
+  };
+
+  const goToTowing = () => {
+    router.push('/towing');
   };
 
   return (
@@ -107,9 +113,10 @@ export const AppDescription = () => {
           <div className='max-md:hidden'>
             <CornerButtonContainer>
               <RoundButton
+                onClick={goToTowing}
                 theme='light'
                 icon={ArrowRight}
-                animation='group-hover:scale-125 group-hover:translate-x-1'
+                animation='group-hover:scale-125 group-hover:-rotate-45'
               />
             </CornerButtonContainer>
           </div>

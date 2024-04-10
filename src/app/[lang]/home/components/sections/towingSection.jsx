@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { Container } from '@/components/container/container';
 import { DivideBanner } from '@/components/divideBanner/divideBanner';
 import EyeIcon from '@/images/global/icons/divideIcons/eye.svg';
@@ -11,6 +12,11 @@ import MobileParkingCar from '@/images/home-page/mobil-parking-car.png';
 import { LargeImageWithDesc } from '@/components/largeImageWithDesc/largeImageWithDesc';
 
 export const TowingSection = () => {
+  const router = useRouter();
+  const goToTowing = () => {
+    router.push('/towing');
+  };
+
   return (
     <Container>
       <div className='my-[170px] max-md:my-[100px]'>
@@ -26,6 +32,7 @@ export const TowingSection = () => {
       </div>
       <SeeHowItWorks />
       <LargeImageWithDesc
+        onClick={goToTowing}
         image={MobileParkingCar}
         mobileClassesImg='ml-[16%] mt-[10%] object-contain max-md:ml-[16%] max-md:mt-[5%]'
         desktopClassesImg='ml-[16%] mt-[10%] object-contain max-md:ml-[18%] max-md:mt-[5%]'

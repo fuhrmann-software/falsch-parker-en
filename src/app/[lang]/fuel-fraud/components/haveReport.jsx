@@ -26,7 +26,7 @@ export const HaveReport = () => {
       <CornerButtonContainer>
         <RoundButton
           icon={Cross}
-          animation='group-hover:scale-125 group-hover:-rotate-45'
+          animation='group-hover:scale-125 group-hover:-rotate-90'
           className='bg-[#0D0F11] text-white'
         />
       </CornerButtonContainer>

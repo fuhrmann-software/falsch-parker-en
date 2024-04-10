@@ -8,12 +8,15 @@ import { ArrowRight } from '@/components/icons/arrowRight';
 import { Cross } from '@/components/icons/cross';
 import { ArrowLeft } from '@/components/icons/arrowLeft';
 
-const RenderButtons = ({ setScreen, isTwoScreen }) => {
+const RenderButtons = ({ setScreen, isTwoScreen, onClick }) => {
+  const goToBlock = () => {};
+
   return (
     <>
       <div className='max-md:hidden'>
         <CornerButtonContainer>
           <RoundButton
+            onClick={onClick || goToBlock}
             theme='light'
             icon={ArrowRight}
             animation='group-hover:scale-125 group-hover:-rotate-45'
@@ -40,6 +43,7 @@ export const LargeImageWithDesc = ({
   descMobile,
   mobileClassesImg,
   desktopClassesImg,
+  onClick,
 }) => {
   const [isTwoScreen, setIsTwoScreen] = useState(false);
   const setScreen = (value) => {
@@ -61,7 +65,11 @@ export const LargeImageWithDesc = ({
           {descDesktop}
         </div>
 
-        <RenderButtons setScreen={setScreen} isTwoScreen={isTwoScreen} />
+        <RenderButtons
+          setScreen={setScreen}
+          isTwoScreen={isTwoScreen}
+          onClick={onClick}
+        />
       </div>
 
       <div className='relative hidden h-[760px] rounded-card bg-white max-md:flex max-md:h-[580px] lg:hidden'>

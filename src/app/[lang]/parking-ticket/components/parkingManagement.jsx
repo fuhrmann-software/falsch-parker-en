@@ -35,7 +35,7 @@ export const ParkingManagement = () => {
           icon={Cross}
           onClick={() => {}}
           className='relative z-[2] bg-[#99BFCC] text-white'
-          animation='group-hover:scale-105 group-hover:-rotate-45'
+          animation='group-hover:scale-125 group-hover:-rotate-90'
         />
       </CornerButtonContainer>
     </div>

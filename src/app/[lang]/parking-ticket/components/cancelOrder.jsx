@@ -41,7 +41,7 @@ export const CancelOrder = () => {
           <RoundButton
             icon={Cross}
             theme='light'
-            animation='group-hover:scale-125 group-hover:-rotate-45'
+            animation='group-hover:scale-125 group-hover:-rotate-90'
             className='bg-[#0D0F11] text-dark'
           />
         </CornerButtonContainer>
