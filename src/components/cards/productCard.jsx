@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Link } from 'react-scroll';
 import FuelFraud from '@/images/home-page/product/fuel-fraud..png';
 import ParkingFines from '@/images/home-page/product/parking-fines.png';
 import RequestTruck from '@/images/home-page/product/request-truck.png';
@@ -9,6 +10,7 @@ import GasStation from '@/images/contact/gas-station.png';
 import { CornerButtonContainer } from '@/components/buttons/cornerButtonContainer';
 import { RoundButton } from '@/components/buttons/roundButton';
 import { ArrowDown } from '@/components/icons/arrowDown';
+
 import cl from 'classnames';
 
 export const ProductCard = ({
@@ -17,6 +19,7 @@ export const ProductCard = ({
   type,
   className,
   icon = ArrowDown,
+  targetElement,
 }) => {
   let src = null;
   let alt = '';
@@ -50,7 +53,12 @@ export const ProductCard = ({
   }
 
   return (
-    <div className='rounded-br-0 h-[680px] w-[440px] cursor-pointer overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card max-md:h-[580px] max-md:w-[328px]'>
+    <Link
+      to={targetElement}
+      smooth={true}
+      offset={-75}
+      duration={1500}
+      className='rounded-br-0 h-[680px] w-[440px] cursor-pointer overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card max-md:h-[580px] max-md:w-[328px]'>
       <div className='group relative h-[680px] w-[440px] transform rounded-card grayscale transition duration-500 ease-in-out hover:grayscale-0 max-md:h-[580px] max-md:w-[328px]'>
         <div className='absolute z-[2] p-10 text-5xl text-white max-md:text-4xl'>
           {title}
@@ -74,6 +82,6 @@ export const ProductCard = ({
           />
         </CornerButtonContainer>
       </div>
-    </div>
+    </Link>
   );
 };

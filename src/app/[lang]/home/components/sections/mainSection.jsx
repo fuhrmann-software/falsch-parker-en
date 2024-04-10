@@ -10,7 +10,7 @@ import MainBanner from '@/images/home-page/main-banner.png';
 import styles from './styles.module.scss';
 import cl from 'classnames';
 
-export const MainSection = ({ scrollTo }) => {
+export const MainSection = () => {
   const openApp = () => {
     window.open('https://app.falsch-parker.ch/', '_blank');
   };
@@ -19,7 +19,7 @@ export const MainSection = ({ scrollTo }) => {
     <Container>
       <div className='flex gap-5 max-lg:flex-col'>
         <div className='relative h-[795px] w-full bg-light max-lg:h-[540px]'>
-          <MainOpenAppShape scrollTo={scrollTo} />
+          <MainOpenAppShape />
           <Image
             src={MainBanner}
             fill
