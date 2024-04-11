@@ -16,7 +16,7 @@ const RenderTowingPool = () => {
   return (
     <div className='relative h-[730px] w-1/2 overflow-hidden rounded-bl-card rounded-tl-card rounded-tr-card max-md:h-[350px] max-md:w-full '>
       <div className='absolute z-[2] p-[50px] max-md:p-10'>
-        <span className='text-[80px] leading-tight  text-white max-xl:text-[45px] max-md:text-[36px]'>
+        <span className='text-[80px] leading-tight  text-white max-xl:text-[45px] max-md:text-[36px] max-sm:text-[34px]'>
           Biggest towing pool in Switzerland.
         </span>
       </div>
@@ -59,12 +59,14 @@ const RenderGreenGradient = () => {
         alt='Towing pool'
       />
       <CornerButtonContainer>
-        <RoundButton
-          icon={ArrowRight}
-          onClick={() => {}}
-          className='relative bg-[#63B2B3] text-white'
-          animation='group-hover:scale-125 group-hover:-rotate-45'
-        />
+        <div className='relative z-[2]'>
+          <RoundButton
+            icon={ArrowRight}
+            onClick={() => {}}
+            className='relative bg-[#63B2B3] text-white'
+            animation='group-hover:scale-125 group-hover:-rotate-45'
+          />
+        </div>
       </CornerButtonContainer>
     </div>
   );

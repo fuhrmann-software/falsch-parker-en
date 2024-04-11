@@ -10,7 +10,7 @@ import { CornerButtonContainer } from '@/components/buttons/cornerButtonContaine
 import { RoundButton } from '@/components/buttons/roundButton';
 import { ArrowDown } from '@/components/icons/arrowDown';
 
-export const NoParking = () => {
+export const NoParking = ({ targetElement = null }) => {
   return (
     <div className='relative h-[700px] w-full overflow-hidden rounded-bl-card rounded-tl-card  rounded-tr-card max-md:h-[580px]'>
       <div className='absolute left-0 z-[1] p-16 max-md:p-8'>
@@ -34,13 +34,21 @@ export const NoParking = () => {
         className='object-cover object-right-bottom sm:hidden'
       />
       <CornerButtonContainer>
-        <Link to='howItWorks' smooth={true} offset={-75} duration={1000}>
+        {targetElement ? (
+          <Link to={targetElement} smooth={true} offset={-75} duration={1000}>
+            <RoundButton
+              icon={ArrowDown}
+              animation='group-hover:scale-125'
+              className='bg-[#0D0F11] text-white'
+            />
+          </Link>
+        ) : (
           <RoundButton
             icon={ArrowDown}
             animation='group-hover:scale-125'
             className='bg-[#0D0F11] text-white'
           />
-        </Link>
+        )}
       </CornerButtonContainer>
     </div>
   );

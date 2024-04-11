@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import ParkingGuard from '@/images/app-page/parking-guard.png';
-import ParkingTicket from '@/images/app-page/parking-ticket.png';
+import ParkingGuard from '@/images/parking-ticket/parking-guard.png';
+import ParkingTicket from '@/images/parking-ticket/parking-ticket.png';
 import { CornerButtonContainer } from '@/components/buttons/cornerButtonContainer';
 import { RoundButton } from '@/components/buttons/roundButton';
 import { ArrowRight } from '@/components/icons/arrowRight';
@@ -13,11 +13,12 @@ export const ParkingCards = () => {
     <div className='relative flex  w-full gap-5 max-md:flex-col'>
       <div className='relative h-[730px] w-full max-w-[670px] overflow-hidden max-xl:h-[440px]'>
         <div className='h-full w-full overflow-hidden '>
-          <div className='absolute z-[2] flex flex-col p-10 text-white'>
-            <span className='mb-5 self-start rounded-full bg-black/10 p-4'>
+          <div className='absolute z-[2] flex flex-col p-10 text-white max-sm:p-6'>
+            <span className='mb-5 self-start  rounded-full bg-black/10 p-4 text-dark max-sm:p-2 max-sm:text-[14px]'>
               Parking ticket
             </span>
           </div>
+
           <Image
             src={ParkingTicket}
             alt='Parking Ticket'
@@ -35,10 +36,11 @@ export const ParkingCards = () => {
           </CornerButtonContainer>
         </div>
       </div>
+
       <div className='relative h-[730px] w-full max-w-[670px] overflow-hidden max-xl:h-[440px]'>
-        <div className='h-full w-full overflow-hidden '>
-          <div className='absolute z-[2] flex flex-col p-10 text-white'>
-            <span className='mb-5 self-start rounded-full bg-white/10 p-4'>
+        <div className='h-full w-full overflow-hidden'>
+          <div className='absolute z-[2] flex flex-col p-10 text-white max-sm:p-6'>
+            <span className='mb-5 self-start rounded-full bg-white/10 p-4 max-sm:p-2 max-sm:text-[14px]'>
               Parking ticket
             </span>
 

@@ -7,6 +7,9 @@ import RequestTruck from '@/images/home-page/product/request-truck.png';
 import NoParking from '@/images/contact/no-parking.png';
 import Truck from '@/images/contact/truck.png';
 import GasStation from '@/images/contact/gas-station.png';
+import NoParkingMobile from '@/images/contact/no-parking-mobile.png';
+import TruckMobile from '@/images/contact/truck-mobile.png';
+import GasStationMobile from '@/images/contact/gas-station-mobile.png';
 import { CornerButtonContainer } from '@/components/buttons/cornerButtonContainer';
 import { RoundButton } from '@/components/buttons/roundButton';
 import { ArrowDown } from '@/components/icons/arrowDown';
@@ -21,6 +24,7 @@ export const ProductCard = ({
   targetElement = null,
 }) => {
   let src = null;
+  let mobileSrc = null;
   let alt = '';
   const Icon = icon;
 
@@ -39,14 +43,17 @@ export const ProductCard = ({
       break;
     case 'noParking':
       src = NoParking;
+      mobileSrc = NoParkingMobile;
       alt = 'No Parking';
       break;
     case 'truck':
       src = Truck;
+      mobileSrc = TruckMobile;
       alt = 'Truck';
       break;
     case 'gasStation':
       src = GasStation;
+      mobileSrc = GasStationMobile;
       alt = 'Gas Station';
       break;
   }
@@ -93,10 +100,18 @@ export const ProductCard = ({
             <div className='absolute z-[2] p-10 text-5xl text-white max-md:text-4xl'>
               {title}
             </div>
-            <div className='relative h-[680px] w-[440px] '>
+            <div className='relative h-[680px] w-[440px] max-sm:hidden'>
               <Image
                 src={src}
                 className='object-cover duration-500 ease-in-out group-hover:scale-105'
+                fill
+                alt={alt}
+              />
+            </div>
+            <div className='h-[680px] w-[440px] sm:hidden'>
+              <Image
+                src={mobileSrc}
+                className='object-right duration-500 ease-in-out group-hover:scale-105'
                 fill
                 alt={alt}
               />

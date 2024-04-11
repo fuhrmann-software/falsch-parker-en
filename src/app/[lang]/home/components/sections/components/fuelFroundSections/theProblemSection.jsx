@@ -28,7 +28,7 @@ export const TheProblemSection = () => {
       ) : (
         <>
           <div className='absolute top-0 z-[1] flex flex-col p-20 max-sm:p-10'>
-            <span className='self-start rounded-full bg-white/10 px-4 py-3 text-white'>
+            <span className='self-start rounded-full bg-white/10 px-4 py-3 text-white max-sm:px-4 max-sm:py-3 max-sm:text-[14px]'>
               The problem
             </span>
             <span className='mt-6 max-w-[800px] text-8xl text-white max-lg:text-5xl max-sm:text-[42px]'>

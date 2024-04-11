@@ -3,7 +3,7 @@ import { Container } from '@/components/container/container';
 import { FaqSection } from '@/components/faq/faqSection';
 import { DivideBanner } from '@/components/divideBanner/divideBanner';
 import BlankIcon from '@/images/global/icons/divideIcons/blank.svg';
-import PortfolioIcon from '@/images/app-page/icons/portfolio.svg';
+import PortfolioIcon from '@/images/parking-ticket/icons/portfolio.svg';
 import { NoParking } from '@/components/noParking/noParking';
 import { SeeHowItWorks } from '@/components/seeHowItWorks/seeHowItWorks';
 import { AppDescription } from '@/components/appDescription/appDescription';
@@ -16,6 +16,7 @@ import { ReceivedParkingFine } from '@/app/[lang]/parking-ticket/components/Rece
 import { CancelOrder } from '@/app/[lang]/parking-ticket/components/cancelOrder';
 
 const ParkingTicketPage = () => {
+  const targetElement = 'parking-ticket-how-it-works';
   return (
     <Container>
       <div className='mb-[172px] mt-[80px] max-md:mb-[100px]'>
@@ -26,10 +27,10 @@ const ParkingTicketPage = () => {
         />
       </div>
 
-      <NoParking />
+      <NoParking targetElement={targetElement} />
 
       <section>
-        <SeeHowItWorks />
+        <SeeHowItWorks targetRef={targetElement} />
         <AppDescription />
         <WrongParkers />
       </section>

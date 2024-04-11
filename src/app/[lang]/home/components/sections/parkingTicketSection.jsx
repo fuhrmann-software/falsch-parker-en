@@ -9,6 +9,7 @@ import { DivideBanner } from '@/components/divideBanner/divideBanner';
 import { NoParking } from '@/components/noParking/noParking';
 
 export const ParkingTicketSection = () => {
+  const targetElement = 'howItWorks';
   return (
     <Container>
       <Element name='parking-ticket' className='my-[170px] max-md:my-[100px]'>
@@ -19,7 +20,7 @@ export const ParkingTicketSection = () => {
           images={[EyeIcon, FormIcon, MarkIcon, PhotoIcon]}
         />
       </Element>
-      <NoParking />
+      <NoParking targetElement={targetElement} />
     </Container>
   );
 };
