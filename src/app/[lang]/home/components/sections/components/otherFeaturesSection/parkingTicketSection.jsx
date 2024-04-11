@@ -2,7 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import ParkingTicket from '@/images/home-page/parkingTicket.png';
+import ParkingTicketMobile from '@/images/home-page/parking-ticket-mobile.png';
 import WhiteLabelSolution from '@/images/home-page/white-label-solution.png';
+import WhiteLabelSolutionMobile from '@/images/home-page/white-label-solution-mobile.png';
 import { CornerButtonContainer } from '@/components/buttons/cornerButtonContainer';
 import { RoundButton } from '@/components/buttons/roundButton';
 import { Cross } from '@/components/icons/cross';
@@ -25,7 +27,13 @@ export const ParkingTicketSection = () => {
           src={WhiteLabelSolution}
           fill
           alt='White label solution'
-          className='object-cover'
+          className='object-cover object-right max-sm:hidden'
+        />
+        <Image
+          src={WhiteLabelSolutionMobile}
+          fill
+          alt='White label solution'
+          className='object-cover sm:hidden'
         />
         <CornerButtonContainer>
           <RoundButton
@@ -43,7 +51,13 @@ export const ParkingTicketSection = () => {
           src={ParkingTicket}
           fill
           alt='Parking tocket'
-          className='object-cover'
+          className='object-cover max-sm:hidden'
+        />
+        <Image
+          src={ParkingTicketMobile}
+          fill
+          alt='Parking tocket'
+          className='object-cover sm:hidden'
         />
         <CornerButtonContainer>
           <RoundButton
