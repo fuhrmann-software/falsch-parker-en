@@ -1,18 +1,18 @@
 'use client';
 
 import React from 'react';
-import { SocialButton } from '@/components/buttons/socialButton';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { SocialButton } from '@/components/buttons/socialButton';
 import { AppButton } from '@/components/buttons/appButton';
 import { Apple } from '@/components/icons/apple';
 import { Android } from '@/components/icons/android';
 import { ScrollToTopButton } from '@/components/buttons/scrollToTopButton';
 import { ArrowDotButton } from '@/components/buttons/arrowDotButton';
-
-import styles from './styles.module.scss';
 import { socials } from '@/components/footer/socials';
 import { DesktopLinks } from '@/components/footer/components/desktop/desktopLinks';
 import { MobileLinks } from '@/components/footer/components/mobile/mobileLinks';
+import styles from './styles.module.scss';
 
 const Footer = ({ lang }) => {
   const scrollToTop = () => {
@@ -20,6 +20,11 @@ const Footer = ({ lang }) => {
       top: 0,
       behavior: 'smooth',
     });
+  };
+
+  const router = useRouter();
+  const goToContactUs = () => {
+    router.push('/contact');
   };
 
   return (
@@ -35,7 +40,9 @@ const Footer = ({ lang }) => {
                 We’re here to help you to solve the problem
               </span>
             </div>
-            <ArrowDotButton theme='light'>Contact us</ArrowDotButton>
+            <ArrowDotButton theme='light' onClick={goToContactUs}>
+              Contact us
+            </ArrowDotButton>
             <div className='contents max-lg:hidden'>
               <div className='flex flex-col gap-1'>
                 <span className='text-xl font-light opacity-50'>

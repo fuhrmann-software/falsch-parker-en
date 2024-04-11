@@ -11,6 +11,9 @@ import { RoundButton } from '@/components/buttons/roundButton';
 import { ArrowDown } from '@/components/icons/arrowDown';
 
 export const NoParking = ({ targetElement = null }) => {
+  const openApp = () => {
+    window.open('https://app.falsch-parker.ch/', '_blank');
+  };
   return (
     <div className='relative h-[700px] w-full overflow-hidden rounded-bl-card rounded-tl-card  rounded-tr-card max-md:h-[580px]'>
       <div className='absolute left-0 z-[1] p-16 max-md:p-8'>
@@ -19,7 +22,7 @@ export const NoParking = ({ targetElement = null }) => {
           <br />
           <span className='text-white/50'>We made it easy.</span>
         </div>
-        <OpenAppButton />
+        <OpenAppButton onClick={openApp} />
       </div>
       <Image
         src={NoParkingImage}

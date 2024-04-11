@@ -5,6 +5,10 @@ import ClaimImage from '@/images/global/claim.png';
 import ClaimMobileImage from '@/images/global/claim-mobile.png';
 
 export const Claim = () => {
+  const openApp = () => {
+    window.open('https://app.falsch-parker.ch/', '_blank');
+  };
+
   return (
     <div className='relative h-[700px] w-full overflow-hidden rounded-card'>
       <div className='absolute left-0 z-[1] flex h-full items-center p-16 max-lg:items-end max-lg:p-8'>
@@ -16,7 +20,7 @@ export const Claim = () => {
             necessary infrastructure and handles the entire processing for you.
           </span>
           <div className='max-lg:self-center'>
-            <OpenAppButton />
+            <OpenAppButton onClick={openApp} />
           </div>
         </div>
       </div>

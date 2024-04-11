@@ -8,6 +8,10 @@ import { RoundButton } from '@/components/buttons/roundButton';
 import { Cross } from '@/components/icons/cross';
 
 export const HaveReport = () => {
+  const openApp = () => {
+    window.open('https://app.falsch-parker.ch/', '_blank');
+  };
+
   return (
     <div className='relative h-[700px] w-full overflow-hidden rounded-bl-card rounded-tl-card  rounded-tr-card max-md:h-[580px]'>
       <div className='absolute left-0 z-[1] p-20 max-md:p-10'>
@@ -16,7 +20,7 @@ export const HaveReport = () => {
           <br />
           <span className='text-white'>report a fuel fraud?</span>
         </div>
-        <OpenAppButton />
+        <OpenAppButton onClick={openApp} />
       </div>
       <Image
         src={RefillImage}

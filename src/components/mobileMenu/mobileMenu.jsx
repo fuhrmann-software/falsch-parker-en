@@ -26,18 +26,23 @@ export const MobileMenu = ({ isMobileMenuOpen, onClose, lang }) => {
           <ul className='flex flex-col gap-2'>
             {headerNavigation.map((item) => (
               <li key={item.name} className='flex flex-col gap-2'>
-                <Link
-                  href={`/${lang}${item.href}`}
-                  onClick={onClose}
-                  className={cl(
-                    ' w-fit p-0 text-base font-light text-[#0D0F11] duration-200 hover:text-[#28282880]',
-                    pathname === `/${lang}${item.href}`
-                      ? 'drop-shadow-[0_0.5px_0_#000]'
-                      : ''
-                  )}>
-                  {t(item.name)}
-                </Link>
-
+                {item.href === undefined ? (
+                  <span className='w-fit p-0 text-base font-light'>
+                    {t(item.name)}
+                  </span>
+                ) : (
+                  <Link
+                    href={`/${lang}${item.href}`}
+                    onClick={onClose}
+                    className={cl(
+                      'w-fit p-0 text-base font-light text-[#0D0F11] duration-200 hover:text-[#28282880]',
+                      pathname === `/${lang}${item.href}`
+                        ? 'drop-shadow-[0_0.5px_0_#000]'
+                        : ''
+                    )}>
+                    {t(item.name)}
+                  </Link>
+                )}
                 <div
                   className='w-303 h-1 bg-gray-300 bg-opacity-10'
                   style={{

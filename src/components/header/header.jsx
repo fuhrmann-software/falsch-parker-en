@@ -41,16 +41,22 @@ const Header = ({ lang }) => {
               <ul className='flex w-full max-w-[650px] justify-between'>
                 {headerNavigation.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      href={`/${lang}${item.href}`}
-                      className={cl(
-                        'p-2 text-base font-light text-[#0D0F11] duration-200 hover:text-[#28282880]',
-                        pathname === `/${lang}${item.href}`
-                          ? 'drop-shadow-[0_0.5px_0_#000]'
-                          : ''
-                      )}>
-                      {t(item.name)}
-                    </Link>
+                    {item.href === undefined ? (
+                      <span className='p-2 text-base font-light text-[#0D0F11]'>
+                        {t(item.name)}
+                      </span>
+                    ) : (
+                      <Link
+                        href={`/${lang}${item.href}`}
+                        className={cl(
+                          'p-2 text-base font-light text-[#0D0F11] duration-200 hover:text-[#28282880]',
+                          pathname === `/${lang}${item.href}`
+                            ? 'drop-shadow-[0_0.5px_0_#000]'
+                            : ''
+                        )}>
+                        {t(item.name)}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

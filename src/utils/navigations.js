@@ -1,6 +1,6 @@
 export const headerNavigation = [
   { name: 'home', href: '' },
-  { name: 'app', href: '/app' },
+  { name: 'app' },
   { name: 'parkingTicket', href: '/parking-ticket' },
   { name: 'towing', href: '/towing' },
   { name: 'fuelFraud', href: '/fuel-fraud' },
