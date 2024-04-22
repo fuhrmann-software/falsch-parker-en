@@ -7,7 +7,7 @@ import cl from 'classnames';
 import { usePathname } from 'next/navigation';
 import { useClientTranslation } from '@/app/i18n/client';
 import { headerNavigation } from '@/utils/navigations';
-import Logo from '@/images/home-page/logo.svg';
+import Logo from '@/images/global/logo.svg';
 import { Container } from '@/components/container/container';
 import { PayFineButton } from '@/components/buttons/payFineButton';
 import MobileMenu from '@/components/mobileMenu/mobileMenu';
